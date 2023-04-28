@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .footer-link {
-  @apply text-[15px] leading-[22px] text-neutral-75 transition-colors duration-200 ease-in hover:text-white;
+  @apply text-[15px] leading-[22px] text-neutral-75 transition-colors duration-200 ease-in hover:text-neutral-250;
 }
 
 .footer-social-icon {
-  @apply h-6 w-6 text-white transition-colors duration-200 ease-in hover:text-white/80;
+  @apply h-6 w-6 text-white transition-colors duration-200 ease-in hover:text-neutral-250;
 }
 
 .footer-h4 {

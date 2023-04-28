@@ -1,6 +1,46 @@
+import { useStateContext } from "@/context/StateContext";
+import { toast } from "react-hot-toast";
+
 const AdvancedStats = () => {
+  const { links } = useStateContext();
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-14">
+      {links?.length > 0 && (
+        <div className="mt-6 grid w-full -translate-y-20 items-center gap-4">
+          {links && links.length > 0
+            ? links.map((link, idx) => {
+                return (
+                  <div
+                    key={idx}
+                    className="w-full rounded-md bg-white py-[18px] pl-8 pr-6 shadow"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-[20px] leading-[36px]">
+                        {link.original_link}
+                      </span>
+                      <div className="flex items-center gap-6">
+                        <span className="text-[20px] leading-[36px] text-neutral-250">
+                          {link.short_link}
+                        </span>
+                        <button
+                          className="rounded-md bg-neutral-250 px-8 py-[10px] font-bold uppercase tracking-wide text-white transition duration-200 ease-in hover:bg-neutral-275"
+                          onClick={() => {
+                            navigator.clipboard.writeText(link.short_link);
+                            toast.success(
+                              `Copied ${link.short_link} to clipboard`
+                            );
+                          }}
+                        >
+                          Copy
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            : null}
+        </div>
+      )}
       <div className="flex flex-col gap-5">
         <h2 className="text-center text-[40px] font-bold leading-[48px]">
           Advanced Statistics
@@ -13,7 +53,7 @@ const AdvancedStats = () => {
       <div className="relative isolate mb-32 flex h-96 justify-between">
         <div className="absolute top-[45%] -z-10 h-2 w-full bg-neutral-250" />
         <div className="relative flex h-[267px] w-[350px] flex-col self-start rounded bg-white px-8 shadow-md">
-          <div className="flex aspect-1 w-[88px] -translate-y-10 justify-center rounded-full bg-primary-750 p-6">
+          <div className="flex aspect-1 w-[88px] -translate-y-10 justify-center rounded-full bg-primary-750 p-6 shadow-md">
             <img
               src="./assets/icon-brand-recognition.svg"
               className="aspect-1 w-10"
@@ -31,7 +71,7 @@ const AdvancedStats = () => {
           </div>
         </div>
         <div className="relative flex h-[267px] w-[350px] flex-col self-center rounded bg-white px-8 shadow-md">
-          <div className="flex aspect-1 w-[88px] -translate-y-10 justify-center rounded-full bg-primary-750 p-6">
+          <div className="flex aspect-1 w-[88px] -translate-y-10 justify-center rounded-full bg-primary-750 p-6 shadow-md">
             <img
               src="./assets/icon-detailed-records.svg"
               className="aspect-1 w-10"
@@ -49,7 +89,7 @@ const AdvancedStats = () => {
           </div>
         </div>
         <div className="relative flex h-[267px] w-[350px] flex-col self-end rounded bg-white px-8 shadow-md">
-          <div className="flex aspect-1 w-[88px] -translate-y-10 justify-center rounded-full bg-primary-750 p-6">
+          <div className="flex aspect-1 w-[88px] -translate-y-10 justify-center rounded-full bg-primary-750 p-6 shadow-md">
             <img
               src="./assets/icon-fully-customizable.svg"
               className="aspect-1 w-10"

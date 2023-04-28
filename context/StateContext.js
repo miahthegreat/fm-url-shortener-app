@@ -10,6 +10,7 @@ export const StateContext = ({ children }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState(null);
   const [error, setError] = useState(null);
+  const [links, setLinks] = useState([]);
 
   return (
     <Context.Provider
@@ -20,6 +21,8 @@ export const StateContext = ({ children }) => {
         setResults,
         error,
         setError,
+        links,
+        setLinks,
       }}
     >
       {children}
