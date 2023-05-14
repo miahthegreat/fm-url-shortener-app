@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Logo from '@/icons/Logo';
+import Logo from "@/icons/Logo";
 
 const Navbar = () => {
   return (
-    <nav className="sticky z-10 mx-auto flex w-full max-w-6xl items-center justify-between bg-white">
+    <nav className="sticky z-10 mx-auto flex w-full max-w-6xl items-center justify-between bg-white px-4 xl:px-0">
       <div className="flex gap-10">
         <Link href="/">
           <Logo className="fill-primary-850" />

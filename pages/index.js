@@ -11,7 +11,7 @@ export default function Home() {
       <Head>
         <title>Shortly | Link Shortener</title>
       </Head>
-      <main className="mx-auto mt-36 grid w-full max-w-[1440px]">
+      <main className="main-container">
         <Hero />
         <div className="w-full bg-neutral-150">
           <ShortenContainer />

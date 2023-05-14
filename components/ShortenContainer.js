@@ -28,7 +28,7 @@ const ShortenContainer = () => {
     }
   };
   return (
-    <div className="relative isolate mx-auto max-w-6xl -translate-y-20 overflow-hidden rounded-xl bg-primary-750 px-[64px] py-[52px] shadow-lg">
+    <div className="shorten-container">
       <img
         className="absolute inset-0 isolate -z-10 w-full object-cover"
         src="./assets/bg-shorten-desktop.svg"

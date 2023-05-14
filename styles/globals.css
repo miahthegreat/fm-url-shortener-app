@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.app-container {
+  @apply relative flex min-h-screen w-full flex-col pt-12 font-cabin text-primary-850 dark:text-neutral-150;
+}
+
+.main-container {
+  @apply mx-auto mt-36 grid w-full max-w-[1440px] px-4 xl:px-0;
+}
+
+.shorten-container {
+  @apply relative isolate mx-auto max-w-6xl -translate-y-20 overflow-hidden rounded-xl bg-primary-750 px-[64px] py-[52px] shadow-lg;
+}
+
 .footer-link {
   @apply text-[15px] leading-[22px] text-neutral-75 transition-colors duration-200 ease-in hover:text-neutral-250;
 }
